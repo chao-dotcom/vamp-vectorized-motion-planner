@@ -1,0 +1,69 @@
+root@f303dcd65986:/workspace/VAMP# ./build/planner_v13_perf_sleef
+VAMP-Aligned Motion Planner
+============================
+SIMD Width: 8 (32 bytes)
+Rake Width: 8 configurations
+Using SLEEF vector trig
+
+
+=== VAMP-Aligned Implementation Benchmark ===
+
+Environment: 51 boxes, 20 spheres
+Robot: 6-DOF arm with hierarchical spheres
+  Links: 6
+  Spheres per link: L0=1, L1=2, L2=4
+
+--- Parity Test (Vectorized vs Scalar) ---
+  Parity check PASSED: Vectorized and Generic implementations match.
+
+--- Single State Validation Benchmark ---
+Validated 10000 states in 25.6801 ms
+  Time per check: 0.00256801 ms (2.56801 µs)
+  Throughput: 389406 checks/sec
+  Valid states: 1573 (15.73%)
+
+--- Motion Validation Benchmark ---
+Validated 1000 motions in 4.25216 ms
+  Time per motion: 0.00425216 ms
+  Throughput: 235175 motions/sec
+  Valid motions: 7 (0.7%)
+
+--- RRT-Connect Planning Benchmark ---
+Creating moderate environment for planning...
+Planning environment: 11 boxes, 5 spheres
+Sampling valid start/goal states...
+Start state: VALID
+Goal state: VALID
+Distance between start and goal: 2.71032
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Solution found in 0 iterations!
+Successful plans: 10/10
+  Mean planning time: 0.0763904 ms
+  Median planning time: 0.079104 ms
+  Mean path length: 12.4 waypoints
+
+=== Benchmark Complete ===
+
+=== Sequential vs SIMD Comparison ===
+
+States checked: 100000
+Sequential:
+  Time: 842.84 ms
+  Throughput: 118647 checks/sec
+  Collisions: 84358
+
+SIMD:
+  Time: 55.2061 ms
+  Throughput: 1.81139e+06 checks/sec
+  Collisions: 84358
+
+Speedup: 15.2671x
+Correctness check: PASSED (both methods agree)
