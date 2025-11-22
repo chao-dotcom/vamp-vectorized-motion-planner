@@ -252,14 +252,6 @@ make clean
 
 ---
 
-## Documentation
-
-- **[Project Description](proj_desc/README.md)**: Original project requirements
-- **[中文总结](proj_desc/summary-zh.md)**: Comprehensive Chinese summary
-- **[VAMP vs Sequential](proj_desc/vamp-differences.md)**: Behavioral differences analysis
-
----
-
 ## Key Optimizations
 
 ### 1. Proper Batching ✓
@@ -289,24 +281,24 @@ make clean
 
 Traditional motion planners spend **60-80%** of time in collision detection. VAMP's vectorization approach:
 
-- ✅ Reduces collision checking time by **15x**
-- ✅ Enables real-time motion planning
-- ✅ Scales to complex robots and environments
-- ✅ Works on standard CPUs (no GPU required)
-- ✅ Zero overhead compared to sequential code
+- Reduces collision checking time by **15x**
+- Enables real-time motion planning
+- Scales to complex robots and environments
+- Works on standard CPUs (no GPU required)
+- Zero overhead compared to sequential code
 
 ---
 
 ## Achievements
 
-- [x] 15.27x speedup (exceeds theoretical 8x SIMD width)
-- [x] 1.8M+ collision checks per second
-- [x] Full 6-DOF robot support
-- [x] Hierarchical sphere culling
-- [x] SLEEF vectorized trig integration
-- [x] Complete RRT-Connect planner
-- [x] Comprehensive benchmarking
-- [x] Correctness validation (parity test)
+- 15.27x speedup (exceeds theoretical 8x SIMD width)
+- 1.8M+ collision checks per second
+- Full 6-DOF robot support
+- Hierarchical sphere culling
+- SLEEF vectorized trig integration
+- Complete RRT-Connect planner
+- Comprehensive benchmarking
+- Correctness validation (parity test)
 
 ---
 
@@ -345,5 +337,5 @@ MIT License - see LICENSE file for details
 
 **Built for high-performance robotics**
 
-*Last updated: 2024*
+*Last updated: 2025*
 
